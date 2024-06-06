@@ -28,24 +28,51 @@
   "portfolio": [
     {
       "id": "1",
-      "src": "./img/placeholder-image.png",
-      "title": "Ahuse",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-      "link": "View In Github"
+      "src": "./img/websitepkm.png",
+      "title": "Website PKM-PI GK JEMBER",
+      "description": "Website PKM-PI ",
+      "link": "View In Website",
+      "url":"https://www.gkjember.com"
     },
     {
       "id": "2",
-      "src": "./img/placeholder-image-1.png",
-      "title": "App Dashboard",
+      "src": "./img/booktopia.png",
+      "title": "Website Penjualan Buku Booktopia",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-      "link": "View In Github"
+      "link": "View In Github",
+      "url":"https://www.gkjember.com"
     },
     {
       "id": "3",
-      "src": "./img/placeholder-image-2.png",
-      "title": "Easy Rentn",
+      "src": "./img/coulture.png",
+      "title": "UI / UX Design Project Coulture",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
-      "link": "View In Github"
+      "link": "View Prototype",
+      "url":"https://www.gkjember.com"
+    },
+    {
+      "id": "4",
+      "src": "./img/trashtopia.png",
+      "title": "UI / UX Design Project Trashtopia",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
+      "link": "View Prototype",
+      "url":"https://www.gkjember.com"
+    },
+    {
+      "id": "5",
+      "src": "./img/gesit.png",
+      "title": "UI / UX Design Project GESIT",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
+      "link": "View Prototype",
+      "url":"https://www.gkjember.com"
+    },
+    {
+      "id": "6",
+      "src": "./img/dispendukplus.png",
+      "title": "UI / UX Design Project DispendukPlus",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique",
+      "link": "View Prototype",
+      "url":"https://www.gkjember.com"
     }
   ],
   "testimonial": [
