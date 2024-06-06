@@ -14,9 +14,7 @@ export default function AboutMe() {
           impactful projects
           </p>
           <p className="hero--section-description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
-            officiis sit debitis omnis harum sed veniam quasi dicta accusamus
-            recusandae?
+            
           </p>
         </div>
       </div>
