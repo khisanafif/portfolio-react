@@ -6,7 +6,7 @@ function Footer() {
     <footer className="footer--container">
       <div className="footer--link--container">
         <div>
-          <img src="./img/logo.svg" alt="Logoipsum" />
+          <img style={{ height: "60px" }} src="./img/logo.png" alt="Portfolio Khisan" />
         </div>
         <div className="footer--items">
           <ul>
