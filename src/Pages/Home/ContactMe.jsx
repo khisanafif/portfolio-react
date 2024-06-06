@@ -21,11 +21,11 @@ export default function ContactMe() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const mailtoLink = `mailto:khisanafif3@gmail.com?subject=${encodeURIComponent(formData.topic)}&body=${encodeURIComponent(
-      `First Name: ${formData.firstName}\nLast Name: ${formData.lastName}\nEmail: ${formData.email}\nPhone Number: ${formData.phoneNumber}\n\nMessage:\n${formData.message}`
-    )}`;
+    const whatsappMessage = `First Name: ${formData.firstName}%0ALast Name: ${formData.lastName}%0AEmail: ${formData.email}%0APhone Number: ${formData.phoneNumber}%0ATopic: ${formData.topic}%0A%0AMessage:%0A${formData.message}`;
 
-    window.location.href = mailtoLink;
+    const whatsappLink = `https://wa.me/6281230670853?text=${encodeURIComponent(whatsappMessage)}`;
+
+    window.location.href = whatsappLink;
   };
 
   return (
@@ -99,9 +99,9 @@ export default function ContactMe() {
             required
           >
             <option value="" disabled>Select One...</option>
-            <option value="Item 1">Item 1</option>
-            <option value="Item 2">Item 2</option>
-            <option value="Item 3">Item 3</option>
+            <option value="Item 1">Penawaran Project</option>
+            <option value="Item 2">Kerjasama</option>
+            <option value="Item 3">Lainnya</option>
           </select>
         </label>
         <label htmlFor="message" className="contact--label">

@@ -62,19 +62,19 @@ function Footer() {
                 Contact
               </Link>
             </li>
-            {/* <li>
+              <li>
               <Link
                 activeClass="navbar--active-content"
                 spy={true}
                 smooth={true}
                 offset={-70}
                 duration={500}
-                to="testimonial"
+                to="achievement"
                 className="text-md"
               >
-                Testimonials
+                Achievement
               </Link>
-            </li> */}
+            </li> 
           </ul>
         </div>
         <div className="footer--social--icon">

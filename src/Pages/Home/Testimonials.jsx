@@ -5,7 +5,7 @@ export default function AchievementList() {
     <section className="achievement--section" id="achievement" style={{ marginLeft: '100px' }}>
       <div className="portfolio--container-box">
         <div className="portfolio--container">
-          <p className="sub--title">Skills & Achievements</p>
+          <p className="sub--title">My Achievements</p>
           <h2 className="sections--heading">Achievement List</h2>
         </div>
       </div>
