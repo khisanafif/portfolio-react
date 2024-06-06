@@ -16,13 +16,13 @@
       "id": "3",
       "src": "./img/feather-pen-2.png",
       "title": "Research",
-      "description": "Proven expertise in research, highlighted by competition successes including championship titles. Skilled in crafting effective research proposals for project needs"
+      "description": "Proven expertise in research, highlighted by competition successes including championship titles. Skilled in crafting effective research proposals for project needs."
     },
     {
       "id": "4",
       "src": "./img/feather-pen-1.png",
-      "title": "Webflow Development",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspenmdisse varius eim in eros elementum tristique"
+      "title": "UX Writer",
+      "description": "Specialized in creating clear, concise, and user-friendly content for web and mobile applications. Adept at understanding user needs and translating them into engaging, intuitive copy that enhances the overall user experience."
     }
   ],
   "portfolio": [
