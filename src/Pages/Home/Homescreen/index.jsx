@@ -9,13 +9,27 @@ import AchievementList from "../Testimonials";
 export default function Home() {
   return (
     <>
-      <HeroSection />
-      <MySkills />
-      <AboutMe />
-      <MyPortfolio />
-      <AchievementList/>
-      <ContactMe />
-      <Footer />
+      <div style={{ marginBottom: '100px', padding: '20px', backgroundColor: '#f4f4f4' }}>
+        <HeroSection />
+      </div>
+      <div style={{ marginBottom: '280px', padding: '20px', backgroundColor: '#fff', border: '1px solid #ddd', borderRadius: '4px' }}>
+        <MySkills />
+      </div>
+      <div style={{ marginBottom: '100px', padding: '20px', backgroundColor: '#fff', border: '1px solid #ddd', borderRadius: '4px' }}>
+        <AboutMe />
+      </div>
+      <div style={{ marginBottom: '100px', padding: '20px', backgroundColor: '#fff', border: '1px solid #ddd', borderRadius: '4px' }}>
+        <MyPortfolio />
+      </div>
+      <div style={{ marginBottom: '100px', padding: '20px', backgroundColor: '#fff', border: '1px solid #ddd', borderRadius: '4px' }}>
+        <AchievementList />
+      </div>
+      <div style={{ marginBottom: '100px', padding: '20px', backgroundColor: '#fff', border: '1px solid #ddd', borderRadius: '4px' }}>
+        <ContactMe />
+      </div>
+      <div style={{ padding: '20px', backgroundColor: '#fff', border: '1px solid #ddd', borderRadius: '4px' }}>
+        <Footer />
+      </div>
     </>
   );
 }
