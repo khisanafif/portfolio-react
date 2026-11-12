@@ -1,6 +1,11 @@
 import Tilt3D from "../../components/Tilt3D";
+import { useApp } from "../../context/AppContext";
+import { translations } from "../../data/translations";
 
 export default function AboutMe() {
+  const { lang } = useApp();
+  const t = translations[lang].about;
+
   return (
     <section id="AboutMe" className="about--section">
       <div className="about--section--img">
@@ -15,56 +20,33 @@ export default function AboutMe() {
       </div>
       <div className="about--section--content--box">
         <div className="about--section--content">
-          <p className="sub--title">About &amp; Education</p>
-          <h2 className="sections--heading">About Me</h2>
-          <p className="hero--section-description">
-            UX Researcher &amp; UX Writer with a strong foundation in
-            Information Technology (GPA: 3.82/4.00, Jember University).
-            Specialized in translating user research into data-driven design
-            strategies, intuitive information architecture, and precise UX
-            writing across gamification, smart city, tourism, and e-commerce
-            domains.
-          </p>
+          <p className="sub--title">{t.subTitle}</p>
+          <h2 className="sections--heading">{t.heading}</h2>
+          <p className="hero--section-description">{t.description}</p>
 
           <div className="about--education-card">
             <div className="about--education-header">
               <div>
-                <h3 className="about--education-school">Jember University</h3>
-                <p className="about--education-degree">
-                  Undergraduate in Information Technology
-                </p>
+                <h3 className="about--education-school">{t.school}</h3>
+                <p className="about--education-degree">{t.degree}</p>
               </div>
-              <span className="about--education-period">
-                Aug 2022 – July 2026
-              </span>
+              <span className="about--education-period">{t.period}</span>
             </div>
-            <p className="about--education-gpa">GPA: 3.82 / 4.00</p>
+            <p className="about--education-gpa">{t.gpa}</p>
             <ul className="about--education-awards">
-              <li>
-                Finalist, Jember University Outstanding Student Award
-                (Mahasiswa Berprestasi) – Representing Faculty of Computer
-                Science (2025)
-              </li>
-              <li>
-                2nd Place, Outstanding Student Award, Faculty of Computer
-                Science, Jember University
-              </li>
+              {t.eduAwards.map((award, idx) => (
+                <li key={idx}>{award}</li>
+              ))}
             </ul>
           </div>
 
           <div className="about--highlights">
-            <div className="about--highlight-card">
-              <span className="about--highlight-value">3.82</span>
-              <span className="about--highlight-label">GPA / 4.00</span>
-            </div>
-            <div className="about--highlight-card">
-              <span className="about--highlight-value">5+</span>
-              <span className="about--highlight-label">National Awards</span>
-            </div>
-            <div className="about--highlight-card">
-              <span className="about--highlight-value">200+</span>
-              <span className="about--highlight-label">ICTVET Audience</span>
-            </div>
+            {t.highlights.map((item, idx) => (
+              <div key={idx} className="about--highlight-card">
+                <span className="about--highlight-value">{item.value}</span>
+                <span className="about--highlight-label">{item.label}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

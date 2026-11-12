@@ -1,15 +1,19 @@
-import data from "../../data/index.json";
 import Tilt3D from "../../components/Tilt3D";
+import { useApp } from "../../context/AppContext";
+import { translations } from "../../data/translations";
 
 export default function MySkills() {
+  const { lang } = useApp();
+  const t = translations[lang].skills;
+
   return (
     <section className="skills--section" id="mySkills">
       <div className="portfolio--container">
-        <p className="sub--title">My Skills</p>
-        <h2 className="skills--section--heading">My Expertise</h2>
+        <p className="sub--title">{t.subTitle}</p>
+        <h2 className="skills--section--heading">{t.heading}</h2>
       </div>
       <div className="skills--section--container">
-        {data?.skills?.map((item, index) => (
+        {t.items.map((item, index) => (
           <Tilt3D
             key={item.id || index}
             className="skills--section--card"

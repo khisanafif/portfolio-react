@@ -57,6 +57,20 @@ img {
   --section-py: clamp(64px, 7vw, 112px);
 }
 
+[data-theme="dark"] {
+  --primary: #7c5cff;
+  --primary-hover: #6946f5;
+  --heading-color: #f1f5f9;
+  --bg-shade: #0f172a;
+  --darkblue: #cbd5e1;
+  --black: #ffffff;
+  --white: #0b0f19;
+  --border-subtle: rgba(148, 163, 184, 0.16);
+  --shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 18px 40px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 24px 52px rgba(124, 92, 255, 0.22);
+}
+
 /* 3D Utility Classes */
 .tilt-3d-wrapper {
   transform-style: preserve-3d;
@@ -327,6 +341,42 @@ h3 {
   padding: 10px 22px;
   font-size: 15px;
   border-radius: 999px;
+}
+
+.navbar--actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar--mobile-controls {
+  display: none;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar--icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 38px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(94, 59, 238, 0.2);
+  background: rgba(94, 59, 238, 0.06);
+  color: var(--heading-color);
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.navbar--icon-btn:hover {
+  background: rgba(94, 59, 238, 0.14);
+  border-color: var(--primary);
+  transform: translateY(-1px);
 }
 
 .navbar--mobile-cta {
@@ -1493,8 +1543,13 @@ input[type="checkbox"] {
 
 /* Tablet Portrait & Mobile Nav Switch (<= 1024px) */
 @media only screen and (max-width: 1024px) {
-  .navbar--cta {
+  .navbar--cta,
+  .navbar--actions {
     display: none;
+  }
+
+  .navbar--mobile-controls {
+    display: flex;
   }
 
   .nav__hamburger {
@@ -1709,5 +1764,102 @@ input[type="checkbox"] {
 
   .tilt-3d-wrapper {
     transition: none;
+  }
+}
+
+/* =====================================================
+   Dark Mode Overrides
+   ===================================================== */
+[data-theme="dark"] .navbar {
+  background: rgba(11, 15, 25, 0.85);
+  border-bottom-color: rgba(124, 92, 255, 0.18);
+}
+
+[data-theme="dark"] .navbar--scrolled {
+  background: rgba(15, 23, 42, 0.94);
+  border-color: rgba(124, 92, 255, 0.28);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="dark"] .navbar--items > ul {
+  background: rgba(124, 92, 255, 0.1);
+  border-color: rgba(124, 92, 255, 0.18);
+}
+
+[data-theme="dark"] .navbar--content:hover {
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="dark"] .navbar--icon-btn {
+  background: rgba(124, 92, 255, 0.14);
+  border-color: rgba(124, 92, 255, 0.28);
+  color: var(--heading-color);
+}
+
+[data-theme="dark"] .hero--badge,
+[data-theme="dark"] .hero--floating-chip {
+  background: rgba(15, 23, 42, 0.88);
+  border-color: rgba(124, 92, 255, 0.32);
+  color: var(--heading-color);
+}
+
+[data-theme="dark"] .skills--section--card,
+[data-theme="dark"] .experience--card {
+  background: linear-gradient(165deg, #161e2e 0%, #0f172a 100%);
+  border-color: rgba(124, 92, 255, 0.22);
+}
+
+[data-theme="dark"] .skills--section--img {
+  background: #1e293b;
+}
+
+[data-theme="dark"] .skills--tag {
+  background: rgba(124, 92, 255, 0.18);
+  color: #c4b5fd;
+}
+
+[data-theme="dark"] .about--3d-frame,
+[data-theme="dark"] .about--education-card,
+[data-theme="dark"] .about--highlight-card,
+[data-theme="dark"] .portfolio--section--card,
+[data-theme="dark"] .achievement--section--card,
+[data-theme="dark"] .contact--3d-card {
+  background: #131b2c;
+  border-color: rgba(124, 92, 255, 0.22);
+}
+
+[data-theme="dark"] .experience--tabs {
+  background: #131b2c;
+  border-color: rgba(124, 92, 255, 0.22);
+}
+
+[data-theme="dark"] .contact--input {
+  background: #0f172a;
+  border-color: rgba(124, 92, 255, 0.35);
+  color: var(--heading-color);
+}
+
+[data-theme="dark"] select.contact--input {
+  background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 33" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M16.5303 21.2052C16.2374 21.4981 15.7626 21.4981 15.4697 21.2052L7.82318 13.5587C7.53029 13.2658 7.53029 12.791 7.82318 12.4981L8.17674 12.1445C8.46963 11.8516 8.9445 11.8516 9.2374 12.1445L16 18.9071L22.7626 12.1445C23.0555 11.8516 23.5303 11.8516 23.8232 12.1445L24.1768 12.4981C24.4697 12.791 24.4697 13.2658 24.1768 13.5587L16.5303 21.2052Z" fill="%23f1f5f9"/></svg>')
+    #0f172a no-repeat calc(100% - 14px) center;
+}
+
+[data-theme="dark"] .footer--social--icon svg path {
+  fill: #f1f5f9;
+}
+
+[data-theme="dark"] .divider {
+  background: rgba(148, 163, 184, 0.2);
+}
+
+@media only screen and (max-width: 1024px) {
+  [data-theme="dark"] .navbar--items {
+    background: rgba(15, 23, 42, 0.97);
+    border-color: rgba(124, 92, 255, 0.28);
+  }
+
+  [data-theme="dark"] .navbar--items > ul {
+    background: transparent;
+    border-color: transparent;
   }
 }

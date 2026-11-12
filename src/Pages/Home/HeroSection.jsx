@@ -1,7 +1,12 @@
 import { Link } from "react-scroll";
 import Tilt3D from "../../components/Tilt3D";
+import { useApp } from "../../context/AppContext";
+import { translations } from "../../data/translations";
 
 export default function HeroSection() {
+  const { lang } = useApp();
+  const t = translations[lang].hero;
+
   return (
     <section id="heroSection" className="hero--section">
       <div className="hero--bg-orb hero--bg-orb-1" aria-hidden="true"></div>
@@ -11,21 +16,17 @@ export default function HeroSection() {
         <div className="hero--section--content">
           <span className="hero--badge">
             <span className="hero--badge--dot"></span>
-            Jember, East Java, Indonesia • GPA 3.82/4.00
+            {t.badge}
           </span>
-          <p className="section--title">Hey, I'm Khisan Afif Ainur Rohim</p>
+          <p className="section--title">{t.greeting}</p>
           <h1 className="hero--section--title">
             <span className="hero--section--title--color">
-              UX Researcher &amp;
+              {t.titleHighlight}
             </span>{" "}
             <br />
-            UX Writer
+            {t.titleMain}
           </h1>
-          <p className="hero--section-description">
-            Information Technology undergraduate at Jember University specialized
-            in translating user research into data-driven design strategies,
-            intuitive information architecture, and precise UX writing.
-          </p>
+          <p className="hero--section-description">{t.description}</p>
         </div>
         <div className="hero--cta-group">
           <Link
@@ -35,7 +36,7 @@ export default function HeroSection() {
             duration={500}
             className="btn btn-primary btn-3d"
           >
-            Get In Touch
+            {t.ctaPrimary}
           </Link>
           <Link
             to="MyPortfolio"
@@ -44,7 +45,7 @@ export default function HeroSection() {
             duration={500}
             className="btn btn-outline-primary"
           >
-            Explore UX Projects
+            {t.ctaSecondary}
           </Link>
         </div>
       </div>
@@ -66,12 +67,12 @@ export default function HeroSection() {
             className="hero--3d-image"
           />
           <div className="hero--floating-chip hero--chip-top">
-            <span className="chip-icon">🔍</span>
-            <span>UX Research &amp; Writing</span>
+            <span className="chip-icon">📊</span>
+            <span>{t.chipTop}</span>
           </div>
           <div className="hero--floating-chip hero--chip-bottom">
             <span className="chip-icon">🏆</span>
-            <span>Mawapres Finalist</span>
+            <span>{t.chipBottom}</span>
           </div>
         </Tilt3D>
       </div>

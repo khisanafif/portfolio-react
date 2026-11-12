@@ -1,13 +1,17 @@
-import data from "../../data/index.json";
 import Tilt3D from "../../components/Tilt3D";
+import { useApp } from "../../context/AppContext";
+import { translations } from "../../data/translations";
 
 export default function MyPortfolio() {
+  const { lang } = useApp();
+  const t = translations[lang].portfolio;
+
   return (
     <section className="portfolio--section" id="MyPortfolio">
       <div className="portfolio--container-box">
         <div className="portfolio--container">
-          <p className="sub--title">UX &amp; Development Case Studies</p>
-          <h2 className="sections--heading">UX Projects</h2>
+          <p className="sub--title">{t.subTitle}</p>
+          <h2 className="sections--heading">{t.heading}</h2>
         </div>
         <div>
           <a
@@ -30,12 +34,12 @@ export default function MyPortfolio() {
                 fill="currentColor"
               />
             </svg>
-            Visit My GitHub
+            {t.githubBtn}
           </a>
         </div>
       </div>
       <div className="portfolio--section--container">
-        {data?.portfolio?.map((item, index) => (
+        {t.items.map((item, index) => (
           <Tilt3D
             key={item.id || index}
             className="portfolio--section--card"

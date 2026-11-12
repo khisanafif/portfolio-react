@@ -1,32 +1,38 @@
 import { useState } from "react";
-import data from "../../data/index.json";
 import Tilt3D from "../../components/Tilt3D";
+import { useApp } from "../../context/AppContext";
+import { translations } from "../../data/translations";
 
 export default function Experience() {
   const [activeTab, setActiveTab] = useState("ux");
+  const { lang } = useApp();
+  const t = translations[lang].experience;
 
-  const items =
-    activeTab === "ux"
-      ? data?.experience?.ux || []
-      : data?.experience?.organization || [];
+  const items = activeTab === "ux" ? t.ux : t.organization;
 
   return (
     <section id="Experience" className="experience--section">
       <div className="portfolio--container-box">
         <div className="portfolio--container">
-          <p className="sub--title">Career &amp; Leadership</p>
-          <h2 className="sections--heading">Experience</h2>
+          <p className="sub--title">{t.subTitle}</p>
+          <h2 className="sections--heading">{t.heading}</h2>
         </div>
 
-        <div className="experience--tabs" role="tablist" aria-label="Experience categories">
+        <div
+          className="experience--tabs"
+          role="tablist"
+          aria-label="Experience categories"
+        >
           <button
             type="button"
             role="tab"
             aria-selected={activeTab === "ux"}
-            className={`experience--tab-btn ${activeTab === "ux" ? "active" : ""}`}
+            className={`experience--tab-btn ${
+              activeTab === "ux" ? "active" : ""
+            }`}
             onClick={() => setActiveTab("ux")}
           >
-            UX Research &amp; Design
+            {t.tabUx}
           </button>
           <button
             type="button"
@@ -37,7 +43,7 @@ export default function Experience() {
             }`}
             onClick={() => setActiveTab("organization")}
           >
-            Organizational
+            {t.tabOrg}
           </button>
         </div>
       </div>
@@ -69,4 +75,3 @@ export default function Experience() {
     </section>
   );
 }
-

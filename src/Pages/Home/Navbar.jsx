@@ -1,9 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-scroll";
+import { useApp } from "../../context/AppContext";
+import { translations } from "../../data/translations";
 
 function Navbar() {
   const [navActive, setNavActive] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { theme, toggleTheme, lang, toggleLang } = useApp();
+  const t = translations[lang].nav;
 
   const toggleNav = () => {
     setNavActive((prev) => !prev);
@@ -57,17 +61,37 @@ function Navbar() {
           </span>
         </Link>
 
-        <button
-          type="button"
-          className={`nav__hamburger ${navActive ? "active" : ""}`}
-          onClick={toggleNav}
-          aria-label="Toggle navigation menu"
-          aria-expanded={navActive}
-        >
-          <span className="nav__hamburger__line"></span>
-          <span className="nav__hamburger__line"></span>
-          <span className="nav__hamburger__line"></span>
-        </button>
+        <div className="navbar--mobile-controls">
+          <button
+            type="button"
+            className="navbar--icon-btn"
+            onClick={toggleLang}
+            aria-label="Switch language"
+            title={lang === "en" ? "Ganti ke Bahasa Indonesia" : "Switch to English"}
+          >
+            {lang === "en" ? "ID" : "EN"}
+          </button>
+          <button
+            type="button"
+            className="navbar--icon-btn"
+            onClick={toggleTheme}
+            aria-label="Toggle dark or light mode"
+            title={theme === "light" ? "Dark Mode" : "Light Mode"}
+          >
+            {theme === "light" ? "🌙" : "☀️"}
+          </button>
+          <button
+            type="button"
+            className={`nav__hamburger ${navActive ? "active" : ""}`}
+            onClick={toggleNav}
+            aria-label="Toggle navigation menu"
+            aria-expanded={navActive}
+          >
+            <span className="nav__hamburger__line"></span>
+            <span className="nav__hamburger__line"></span>
+            <span className="nav__hamburger__line"></span>
+          </button>
+        </div>
 
         <div className={`navbar--items ${navActive ? "active" : ""}`}>
           <ul>
@@ -82,7 +106,7 @@ function Navbar() {
                 to="heroSection"
                 className="navbar--content"
               >
-                Home
+                {t.home}
               </Link>
             </li>
             <li>
@@ -96,7 +120,7 @@ function Navbar() {
                 to="mySkills"
                 className="navbar--content"
               >
-                Skills
+                {t.skills}
               </Link>
             </li>
             <li>
@@ -110,7 +134,7 @@ function Navbar() {
                 to="AboutMe"
                 className="navbar--content"
               >
-                About
+                {t.about}
               </Link>
             </li>
             <li>
@@ -124,7 +148,7 @@ function Navbar() {
                 to="Experience"
                 className="navbar--content"
               >
-                Experience
+                {t.experience}
               </Link>
             </li>
             <li>
@@ -138,7 +162,7 @@ function Navbar() {
                 to="MyPortfolio"
                 className="navbar--content"
               >
-                Projects
+                {t.projects}
               </Link>
             </li>
             <li>
@@ -152,7 +176,7 @@ function Navbar() {
                 to="achievement"
                 className="navbar--content"
               >
-                Awards
+                {t.awards}
               </Link>
             </li>
             <li className="navbar--mobile-cta">
@@ -165,24 +189,44 @@ function Navbar() {
                 to="Contact"
                 className="btn btn-primary btn-3d"
               >
-                Contact Me
+                {t.contact}
               </Link>
             </li>
           </ul>
         </div>
 
-        <Link
-          onClick={closeMenu}
-          activeClass="navbar--active-content"
-          spy={true}
-          smooth={true}
-          offset={-80}
-          duration={500}
-          to="Contact"
-          className="btn btn-primary btn-3d navbar--cta"
-        >
-          Contact Me
-        </Link>
+        <div className="navbar--actions">
+          <button
+            type="button"
+            className="navbar--icon-btn"
+            onClick={toggleLang}
+            aria-label="Switch language"
+            title={lang === "en" ? "Ganti ke Bahasa Indonesia" : "Switch to English"}
+          >
+            {lang === "en" ? "🇮🇩 ID" : "🇬🇧 EN"}
+          </button>
+          <button
+            type="button"
+            className="navbar--icon-btn"
+            onClick={toggleTheme}
+            aria-label="Toggle dark or light mode"
+            title={theme === "light" ? "Dark Mode" : "Light Mode"}
+          >
+            {theme === "light" ? "🌙" : "☀️"}
+          </button>
+          <Link
+            onClick={closeMenu}
+            activeClass="navbar--active-content"
+            spy={true}
+            smooth={true}
+            offset={-80}
+            duration={500}
+            to="Contact"
+            className="btn btn-primary btn-3d navbar--cta"
+          >
+            {t.contact}
+          </Link>
+        </div>
       </nav>
     </header>
   );

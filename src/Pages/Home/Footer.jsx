@@ -1,7 +1,13 @@
 import { Link } from "react-scroll";
 import React from "react";
+import { useApp } from "../../context/AppContext";
+import { translations } from "../../data/translations";
 
 function Footer() {
+  const { lang } = useApp();
+  const navT = translations[lang].nav;
+  const footT = translations[lang].footer;
+
   return (
     <footer className="footer--container">
       <div className="footer--link--container">
@@ -20,7 +26,7 @@ function Footer() {
                 to="heroSection"
                 className="text-md"
               >
-                Home
+                {navT.home}
               </Link>
             </li>
             <li>
@@ -33,7 +39,7 @@ function Footer() {
                 to="MyPortfolio"
                 className="text-md"
               >
-                Portfolio
+                {navT.projects}
               </Link>
             </li>
             <li>
@@ -46,7 +52,7 @@ function Footer() {
                 to="AboutMe"
                 className="text-md"
               >
-                About Me
+                {navT.about}
               </Link>
             </li>
             <li>
@@ -59,7 +65,7 @@ function Footer() {
                 to="Experience"
                 className="text-md"
               >
-                Experience
+                {navT.experience}
               </Link>
             </li>
             <li>
@@ -72,7 +78,7 @@ function Footer() {
                 to="Contact"
                 className="text-md"
               >
-                Contact
+                {navT.contact}
               </Link>
             </li>
               <li>
@@ -85,7 +91,7 @@ function Footer() {
                 to="achievement"
                 className="text-md"
               >
-                Achievement
+                {navT.awards}
               </Link>
             </li> 
           </ul>
@@ -145,7 +151,7 @@ function Footer() {
       </div>
       <hr className="divider" />
       <div className="footer--content--container">
-        <p className="footer--content">Made with 💖 by Khisan Afif</p>
+        <p className="footer--content">{footT.madeWith}</p>
         <div className="footer--social--icon">
           <ul>
             <li>
@@ -158,7 +164,7 @@ function Footer() {
                 to="Privacy_Policy"
                 className="text-sm"
               >
-                Privacy Policy
+                {footT.privacy}
               </Link>
             </li>
             <li>
@@ -171,7 +177,7 @@ function Footer() {
                 to="Terms_of_Service"
                 className="text-sm"
               >
-                Terms of Service
+                {footT.terms}
               </Link>
             </li>
             <li>
@@ -184,7 +190,7 @@ function Footer() {
                 to="Cookies_Settings"
                 className="text-sm"
               >
-                Cookies Settings
+                {footT.cookies}
               </Link>
             </li>
           </ul>

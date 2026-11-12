@@ -1,17 +1,21 @@
-import data from "../../data/index.json";
 import Tilt3D from "../../components/Tilt3D";
+import { useApp } from "../../context/AppContext";
+import { translations } from "../../data/translations";
 
 export default function AchievementList() {
+  const { lang } = useApp();
+  const t = translations[lang].awards;
+
   return (
     <section className="achievement--section" id="achievement">
       <div className="portfolio--container-box">
         <div className="portfolio--container">
-          <p className="sub--title">My Achievements</p>
-          <h2 className="sections--heading">Achievement List</h2>
+          <p className="sub--title">{t.subTitle}</p>
+          <h2 className="sections--heading">{t.heading}</h2>
         </div>
       </div>
       <ul className="achievement--section--container">
-        {data?.achievement?.map((item, index) => (
+        {t.items.map((item, index) => (
           <li key={index} className="achievement--list-item">
             <Tilt3D
               className="achievement--section--card"
