@@ -1,40 +1,51 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function ContactMe() {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phoneNumber: '',
-    topic: '',
-    message: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    topic: "",
+    message: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [name]: value,
-    });
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const whatsappMessage = `First Name: ${formData.firstName}%0ALast Name: ${formData.lastName}%0AEmail: ${formData.email}%0APhone Number: ${formData.phoneNumber}%0ATopic: ${formData.topic}%0A%0AMessage:%0A${formData.message}`;
+    const whatsappMessage = [
+      `First Name: ${formData.firstName}`,
+      `Last Name: ${formData.lastName}`,
+      `Email: ${formData.email}`,
+      `Phone Number: ${formData.phoneNumber}`,
+      `Topic: ${formData.topic}`,
+      "",
+      "Message:",
+      formData.message,
+    ].join("\n");
 
-    const whatsappLink = `https://wa.me/6281230670853?text=${encodeURIComponent(whatsappMessage)}`;
+    const whatsappLink = `https://wa.me/6281230670853?text=${encodeURIComponent(
+      whatsappMessage
+    )}`;
 
-    window.location.href = whatsappLink;
+    window.open(whatsappLink, "_blank", "noopener,noreferrer");
   };
 
   return (
     <section id="Contact" className="contact--section">
-      <div>
+      <div className="contact--header">
         <p className="sub--title">Get In Touch</p>
-        <h2>Contact Me</h2>
+        <h2 className="sections--heading">Contact Me</h2>
         <p className="text-lg">
-          Contact Me Here !!!
+          Have a project or collaboration in mind? Send me a message directly.
         </p>
       </div>
       <form className="contact--form--container" onSubmit={handleSubmit}>
@@ -46,6 +57,7 @@ export default function ContactMe() {
               className="contact--input text-md"
               name="firstName"
               id="first-name"
+              placeholder="Enter your first name"
               value={formData.firstName}
               onChange={handleChange}
               required
@@ -58,6 +70,7 @@ export default function ContactMe() {
               className="contact--input text-md"
               name="lastName"
               id="last-name"
+              placeholder="Enter your last name"
               value={formData.lastName}
               onChange={handleChange}
               required
@@ -70,6 +83,7 @@ export default function ContactMe() {
               className="contact--input text-md"
               name="email"
               id="email"
+              placeholder="you@example.com"
               value={formData.email}
               onChange={handleChange}
               required
@@ -78,10 +92,11 @@ export default function ContactMe() {
           <label htmlFor="phone-number" className="contact--label">
             <span className="text-md">Phone Number</span>
             <input
-              type="number"
+              type="tel"
               className="contact--input text-md"
               name="phoneNumber"
               id="phone-number"
+              placeholder="+62 812..."
               value={formData.phoneNumber}
               onChange={handleChange}
               required
@@ -98,10 +113,12 @@ export default function ContactMe() {
             onChange={handleChange}
             required
           >
-            <option value="" disabled>Select One...</option>
-            <option value="Item 1">Penawaran Project</option>
-            <option value="Item 2">Kerjasama</option>
-            <option value="Item 3">Lainnya</option>
+            <option value="" disabled>
+              Select One...
+            </option>
+            <option value="Penawaran Project">Penawaran Project</option>
+            <option value="Kerjasama">Kerjasama</option>
+            <option value="Lainnya">Lainnya</option>
           </select>
         </label>
         <label htmlFor="message" className="contact--label">
@@ -109,7 +126,7 @@ export default function ContactMe() {
           <textarea
             className="contact--input text-md"
             id="message"
-            rows="8"
+            rows="6"
             name="message"
             value={formData.message}
             onChange={handleChange}
@@ -121,7 +138,7 @@ export default function ContactMe() {
           <input type="checkbox" required name="checkbox" id="checkbox" />
           <span className="text-sm">I accept the terms</span>
         </label>
-        <div>
+        <div className="contact--submit--wrap">
           <button type="submit" className="btn btn-primary contact--form--btn">
             Submit
           </button>

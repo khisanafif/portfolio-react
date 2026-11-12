@@ -1,41 +1,24 @@
 import data from "../../data/index.json";
-import { useState } from "react";
 
 export default function MyPortfolio() {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-
-  const cardStyle = {
-    flex: '1 1 calc(33.333% - 16px)',
-    boxSizing: 'border-box',
-    marginBottom: '16px',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    height: '100%',
-    transition: 'transform 0.3s, box-shadow 0.3s',
-  };
-
-  const cardHoverStyle = {
-    transform: 'translateY(-10px)',
-    boxShadow: '0 10px 20px rgba(0, 0, 0, 0.15)',
-  };
-
   return (
     <section className="portfolio--section" id="MyPortfolio">
       <div className="portfolio--container-box">
         <div className="portfolio--container">
           <p className="sub--title">Recent Projects</p>
-          <h2 className="section--heading">My Portfolio</h2>
+          <h2 className="sections--heading">My Portfolio</h2>
         </div>
         <div>
-          <button
+          <a
+            href="https://github.com/khisanafif"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn btn-github"
-            onClick={() => window.location.href = 'https://github.com/khisanafif'}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
+              width="24"
+              height="24"
               viewBox="0 0 33 33"
               fill="none"
             >
@@ -47,42 +30,27 @@ export default function MyPortfolio() {
               />
             </svg>
             Visit My GitHub
-          </button>
+          </a>
         </div>
       </div>
-      <div
-        className="portfolio--section--container"
-        style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}
-      >
+      <div className="portfolio--section--container">
         {data?.portfolio?.map((item, index) => (
-          <div
-            key={index}
-            className="portfolio--section--card"
-            style={{
-              ...cardStyle,
-              ...(hoveredIndex === index ? cardHoverStyle : {}),
-            }}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
+          <article key={item.id || index} className="portfolio--section--card">
             <div className="portfolio--section--img">
-              <img
-                src={item.src}
-                alt="Placeholder"
-                style={{ width: '100%', height: 'auto' }}
-              />
+              <img src={item.src} alt={item.title} loading="lazy" />
             </div>
-            <div className="portfolio--section--card--content" style={{ padding: '16px' }}>
-              <div>
-                <h3 className="portfolio--section--title" style={{ margin: '0 0 8px' }}>{item.title}</h3>
-                <p className="text-md">{item.description}</p>
+            <div className="portfolio--section--card--content">
+              <div className="portfolio--section--card--body">
+                <h3 className="portfolio--section--title">{item.title}</h3>
+                <p className="text-md portfolio--section--description">
+                  {item.description}
+                </p>
               </div>
               <a
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm portfolio--link"
-                style={{ display: 'flex', alignItems: 'center', gap: '4px', textDecoration: 'none', color: 'inherit' }}
               >
                 {item.link}
                 <svg
@@ -102,7 +70,7 @@ export default function MyPortfolio() {
                 </svg>
               </a>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </section>

@@ -5,7 +5,7 @@ function Navbar() {
   const [navActive, setNavActive] = useState(false);
 
   const toggleNav = () => {
-    setNavActive(!navActive);
+    setNavActive((prev) => !prev);
   };
 
   const closeMenu = () => {
@@ -14,37 +14,43 @@ function Navbar() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth <= 500) {
+      if (window.innerWidth > 1024) {
         closeMenu();
       }
     };
 
     window.addEventListener("resize", handleResize);
-
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  useEffect(() => {
-    if (window.innerWidth <= 1200) {
-      closeMenu();
-    }
-  }, []);
-
   return (
     <nav className={`navbar ${navActive ? "active" : ""}`}>
-      <div>
-        <img style={{ height: "60px" }} src="./img/logo.png" alt="Logo" />
-      </div>
-      <a
+      <Link
+        to="heroSection"
+        smooth={true}
+        offset={-70}
+        duration={500}
+        onClick={closeMenu}
+        className="navbar--logo"
+        aria-label="Go to Home"
+      >
+        <img src="./img/logo.png" alt="Khisan Afif Logo" />
+      </Link>
+
+      <button
+        type="button"
         className={`nav__hamburger ${navActive ? "active" : ""}`}
         onClick={toggleNav}
+        aria-label="Toggle navigation menu"
+        aria-expanded={navActive}
       >
         <span className="nav__hamburger__line"></span>
         <span className="nav__hamburger__line"></span>
         <span className="nav__hamburger__line"></span>
-      </a>
+      </button>
+
       <div className={`navbar--items ${navActive ? "active" : ""}`}>
         <ul>
           <li>
@@ -69,10 +75,10 @@ function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
-              to="MyPortfolio"
+              to="mySkills"
               className="navbar--content"
             >
-              Portfolio
+              Skills
             </Link>
           </li>
           <li>
@@ -97,14 +103,42 @@ function Navbar() {
               smooth={true}
               offset={-70}
               duration={500}
+              to="MyPortfolio"
+              className="navbar--content"
+            >
+              Portfolio
+            </Link>
+          </li>
+          <li>
+            <Link
+              onClick={closeMenu}
+              activeClass="navbar--active-content"
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
               to="achievement"
               className="navbar--content"
             >
               Achievement
             </Link>
           </li>
+          <li className="navbar--mobile-cta">
+            <Link
+              onClick={closeMenu}
+              spy={true}
+              smooth={true}
+              offset={-70}
+              duration={500}
+              to="Contact"
+              className="btn btn-primary"
+            >
+              Contact Me
+            </Link>
+          </li>
         </ul>
       </div>
+
       <Link
         onClick={closeMenu}
         activeClass="navbar--active-content"
@@ -113,7 +147,7 @@ function Navbar() {
         offset={-70}
         duration={500}
         to="Contact"
-        className="btn btn-outline-primary"
+        className="btn btn-outline-primary navbar--cta"
       >
         Contact Me
       </Link>
