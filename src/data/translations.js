@@ -276,7 +276,7 @@ export const translations = {
           description:
             "Digital marketing optimization with Augmented Reality web visualization to elevate promotional creativity for MSME Gerai Anyaman Plastik Desa Sidorejo.",
           link: "View In Website",
-          url: "https://www.gkjember.com",
+          url: "https://khisanafif.github.io",
         },
       ],
     },
@@ -627,7 +627,7 @@ export const translations = {
           description:
             "Optimalisasi pemasaran digital berbasis Website Augmented Reality untuk meningkatkan kreativitas promosi mitra UMKM Gerai Anyaman Plastik Desa Sidorejo.",
           link: "Kunjungi Website",
-          url: "https://www.gkjember.com",
+          url: "https://khisanafif.github.io",
         },
       ],
     },
