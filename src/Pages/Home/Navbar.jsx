@@ -6,7 +6,8 @@ import { translations } from "../../data/translations";
 function Navbar() {
   const [navActive, setNavActive] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { theme, toggleTheme, lang, toggleLang } = useApp();
+  const [scrollProgress, setScrollProgress] = useState(0);
+  const { theme, toggleTheme, lang, setLang } = useApp();
   const t = translations[lang].nav;
 
   const toggleNav = () => {
@@ -25,7 +26,12 @@ function Navbar() {
     };
 
     const handleScroll = () => {
-      setScrolled(window.scrollY > 24);
+      const scrollTop = window.scrollY;
+      setScrolled(scrollTop > 24);
+      const docHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      setScrollProgress(Math.min(100, Math.max(0, progress)));
     };
 
     window.addEventListener("resize", handleResize);
@@ -40,6 +46,11 @@ function Navbar() {
 
   return (
     <header className={`navbar-wrapper ${scrolled ? "is-scrolled" : ""}`}>
+      <div
+        className="scroll-progress-bar"
+        style={{ width: `${scrollProgress}%` }}
+        aria-hidden="true"
+      />
       <nav
         className={`navbar ${navActive ? "active" : ""} ${
           scrolled ? "navbar--scrolled" : ""
@@ -62,15 +73,24 @@ function Navbar() {
         </Link>
 
         <div className="navbar--mobile-controls">
-          <button
-            type="button"
-            className="navbar--icon-btn"
-            onClick={toggleLang}
-            aria-label="Switch language"
-            title={lang === "en" ? "Ganti ke Bahasa Indonesia" : "Switch to English"}
-          >
-            {lang === "en" ? "ID" : "EN"}
-          </button>
+          <div className="lang-pill" role="group" aria-label="Language switch">
+            <button
+              type="button"
+              className={`lang-pill--btn ${lang === "id" ? "active" : ""}`}
+              onClick={() => setLang("id")}
+              aria-pressed={lang === "id"}
+            >
+              ID
+            </button>
+            <button
+              type="button"
+              className={`lang-pill--btn ${lang === "en" ? "active" : ""}`}
+              onClick={() => setLang("en")}
+              aria-pressed={lang === "en"}
+            >
+              EN
+            </button>
+          </div>
           <button
             type="button"
             className="navbar--icon-btn"
@@ -196,15 +216,24 @@ function Navbar() {
         </div>
 
         <div className="navbar--actions">
-          <button
-            type="button"
-            className="navbar--icon-btn"
-            onClick={toggleLang}
-            aria-label="Switch language"
-            title={lang === "en" ? "Ganti ke Bahasa Indonesia" : "Switch to English"}
-          >
-            {lang === "en" ? "🇮🇩 ID" : "🇬🇧 EN"}
-          </button>
+          <div className="lang-pill" role="group" aria-label="Language switch">
+            <button
+              type="button"
+              className={`lang-pill--btn ${lang === "id" ? "active" : ""}`}
+              onClick={() => setLang("id")}
+              aria-pressed={lang === "id"}
+            >
+              ID
+            </button>
+            <button
+              type="button"
+              className={`lang-pill--btn ${lang === "en" ? "active" : ""}`}
+              onClick={() => setLang("en")}
+              aria-pressed={lang === "en"}
+            >
+              EN
+            </button>
+          </div>
           <button
             type="button"
             className="navbar--icon-btn"
