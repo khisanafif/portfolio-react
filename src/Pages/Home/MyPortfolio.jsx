@@ -6,8 +6,8 @@ export default function MyPortfolio() {
     <section className="portfolio--section" id="MyPortfolio">
       <div className="portfolio--container-box">
         <div className="portfolio--container">
-          <p className="sub--title">Recent Projects</p>
-          <h2 className="sections--heading">My Portfolio</h2>
+          <p className="sub--title">UX &amp; Development Case Studies</p>
+          <h2 className="sections--heading">UX Projects</h2>
         </div>
         <div>
           <a
@@ -44,13 +44,23 @@ export default function MyPortfolio() {
           >
             <div className="portfolio--section--img">
               <img src={item.src} alt={item.title} loading="lazy" />
+              {item.badge && (
+                <span className="portfolio--badge">{item.badge}</span>
+              )}
             </div>
             <div className="portfolio--section--card--content layer-3d-mid">
               <div className="portfolio--section--card--body">
+                <div className="portfolio--meta">
+                  <span className="portfolio--role">{item.role}</span>
+                  <span className="portfolio--year">{item.year}</span>
+                </div>
                 <h3 className="portfolio--section--title">{item.title}</h3>
                 <p className="text-md portfolio--section--description">
                   {item.description}
                 </p>
+                {item.tools && (
+                  <p className="portfolio--tools">Tools: {item.tools}</p>
+                )}
               </div>
               <a
                 href={item.url}

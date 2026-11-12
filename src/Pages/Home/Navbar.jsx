@@ -110,7 +110,21 @@ function Navbar() {
                 to="AboutMe"
                 className="navbar--content"
               >
-                About Me
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                onClick={closeMenu}
+                activeClass="navbar--active-content"
+                spy={true}
+                smooth={true}
+                offset={-80}
+                duration={500}
+                to="Experience"
+                className="navbar--content"
+              >
+                Experience
               </Link>
             </li>
             <li>
@@ -124,7 +138,7 @@ function Navbar() {
                 to="MyPortfolio"
                 className="navbar--content"
               >
-                Portfolio
+                Projects
               </Link>
             </li>
             <li>
@@ -138,7 +152,7 @@ function Navbar() {
                 to="achievement"
                 className="navbar--content"
               >
-                Achievement
+                Awards
               </Link>
             </li>
             <li className="navbar--mobile-cta">

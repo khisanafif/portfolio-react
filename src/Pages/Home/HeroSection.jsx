@@ -11,25 +11,27 @@ export default function HeroSection() {
         <div className="hero--section--content">
           <span className="hero--badge">
             <span className="hero--badge--dot"></span>
-            Available for Projects &amp; Collaboration
+            Jember, East Java, Indonesia • GPA 3.82/4.00
           </span>
           <p className="section--title">Hey, I'm Khisan Afif Ainur Rohim</p>
           <h1 className="hero--section--title">
-            <span className="hero--section--title--color">Learning to be</span>{" "}
+            <span className="hero--section--title--color">
+              UX Researcher &amp;
+            </span>{" "}
             <br />
-            Full Stack Developer
+            UX Writer
           </h1>
           <p className="hero--section-description">
-            Undergraduate Student of Information Technology, Universitas Jember.
-            Passionate about crafting modern web experiences, UI/UX research, and
-            impactful digital products.
+            Information Technology undergraduate at Jember University specialized
+            in translating user research into data-driven design strategies,
+            intuitive information architecture, and precise UX writing.
           </p>
         </div>
         <div className="hero--cta-group">
           <Link
             to="Contact"
             smooth={true}
-            offset={-70}
+            offset={-80}
             duration={500}
             className="btn btn-primary btn-3d"
           >
@@ -38,11 +40,11 @@ export default function HeroSection() {
           <Link
             to="MyPortfolio"
             smooth={true}
-            offset={-70}
+            offset={-80}
             duration={500}
             className="btn btn-outline-primary"
           >
-            Explore Projects
+            Explore UX Projects
           </Link>
         </div>
       </div>
@@ -64,12 +66,12 @@ export default function HeroSection() {
             className="hero--3d-image"
           />
           <div className="hero--floating-chip hero--chip-top">
-            <span className="chip-icon">⚡</span>
-            <span>Full Stack Dev</span>
+            <span className="chip-icon">🔍</span>
+            <span>UX Research &amp; Writing</span>
           </div>
           <div className="hero--floating-chip hero--chip-bottom">
-            <span className="chip-icon">🎨</span>
-            <span>UI/UX &amp; Research</span>
+            <span className="chip-icon">🏆</span>
+            <span>Mawapres Finalist</span>
           </div>
         </Tilt3D>
       </div>

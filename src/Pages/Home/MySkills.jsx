@@ -22,6 +22,15 @@ export default function MySkills() {
             <div className="skills--section--card--content layer-3d-mid">
               <h3 className="skills--section--title">{item.title}</h3>
               <p className="skills--section--description">{item.description}</p>
+              {item.tags && (
+                <div className="skills--tags">
+                  {item.tags.map((tag, idx) => (
+                    <span key={idx} className="skills--tag">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           </Tilt3D>
         ))}

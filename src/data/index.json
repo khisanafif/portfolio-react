@@ -2,103 +2,243 @@
   "skills": [
     {
       "id": "1",
-      "src": "./img/product-chain-1.png",
-      "title": "Front-End",
-      "description": "Proficient in utilizing front-end frameworks like Bootstrap and Tailwind CSS to create visually appealing and responsive web applications. Additionally, adept at mastering Vanilla CSS for writing clean and efficient code."
+      "src": "./img/feather-pen-1.png",
+      "title": "UX Research & Writing",
+      "description": "Translating qualitative and quantitative user insights into intuitive information architecture and clear product copy.",
+      "tags": [
+        "User Research",
+        "Usability Testing",
+        "Information Architecture",
+        "UX Writing",
+        "Microcopy",
+        "User Journey Mapping",
+        "Wireframing",
+        "Prototyping",
+        "Competitive Analysis"
+      ]
     },
     {
       "id": "2",
-      "src": "./img/tag-1.png",
-      "title": "Back-End",
-      "description": "Developed proficiency in using PHP for back-end development, successfully implementing it in the Booktopia project."
+      "src": "./img/product-chain-1.png",
+      "title": "Design & Workflow Tools",
+      "description": "Collaborating across design, research synthesis, and project management workflows from ideation to handoff.",
+      "tags": ["Figma", "FigJam", "Trello", "Notion"]
     },
     {
       "id": "3",
-      "src": "./img/feather-pen-2.png",
-      "title": "Research",
-      "description": "Proven expertise in research, highlighted by competition successes including championship titles. Skilled in crafting effective research proposals for project needs."
+      "src": "./img/tag-1.png",
+      "title": "Technical Stack",
+      "description": "Bridging UX decisions with technical implementation across web front-end, back-end, and data-driven systems.",
+      "tags": ["HTML", "CSS", "JavaScript", "React.js", "Python", "SQL", "PHP"]
     },
     {
       "id": "4",
-      "src": "./img/feather-pen-1.png",
-      "title": "UX Writer",
-      "description": "Specialized in creating clear, concise, and user-friendly content for web and mobile applications. Adept at understanding user needs and translating them into engaging, intuitive copy that enhances the overall user experience."
+      "src": "./img/feather-pen-2.png",
+      "title": "Soft Skills",
+      "description": "Leading cross-functional teams, presenting research persuasively, and communicating with empathy.",
+      "tags": [
+        "Empathetic Communication",
+        "Leadership",
+        "Storytelling",
+        "Critical & Creative Thinking",
+        "Team Collaboration",
+        "Adaptive"
+      ]
     }
   ],
+  "experience": {
+    "ux": [
+      {
+        "id": "ux-1",
+        "role": "Laboratory Coordinator",
+        "organization": "Artificial Intelligence Laboratory, Faculty of Computer Science UNEJ",
+        "location": "Jember, Indonesia",
+        "period": "Aug 2024 – Present",
+        "highlights": [
+          "Oversee research initiatives and academic practicums, applying structured research methodologies to laboratory projects.",
+          "Lead a team of assistants, coordinating research workflows and knowledge-sharing sessions."
+        ]
+      },
+      {
+        "id": "ux-2",
+        "role": "Assistant Laboratory",
+        "organization": "Software Engineering Laboratory",
+        "location": "Jember, Indonesia",
+        "period": "Aug 2023 – Dec 2023",
+        "highlights": [
+          "Facilitated learning sessions for 50 students, developing clear instructional frameworks to improve knowledge transfer and comprehension.",
+          "Applied user-centered communication strategies to adapt technical content to varied learning needs."
+        ]
+      },
+      {
+        "id": "ux-3",
+        "role": "Presenter",
+        "organization": "International Conference on Technical and Vocational Education and Training (ICTVET)",
+        "location": "Padang, Indonesia",
+        "period": "Aug 2023",
+        "highlights": [
+          "Presented research findings on technology and vocational education advancements to an audience of 200+ attendees.",
+          "Developed a structured narrative to communicate complex research insights clearly and persuasively."
+        ]
+      }
+    ],
+    "organization": [
+      {
+        "id": "org-1",
+        "role": "HRD Coordinator",
+        "organization": "Ambulu Mengajar",
+        "location": "Jember, Indonesia",
+        "period": "Jan 2025 – Present",
+        "highlights": [
+          "Lead the HRD division, designing people-centered programs to develop member capabilities and community impact."
+        ]
+      },
+      {
+        "id": "org-2",
+        "role": "Staff Human Resource and Development",
+        "organization": "Ambulu Mengajar",
+        "location": "Jember, Indonesia",
+        "period": "Jan 2024 – Dec 2024",
+        "highlights": [
+          "Identified community needs and developed targeted educational programs to bridge the gap between students and higher education access."
+        ]
+      },
+      {
+        "id": "org-3",
+        "role": "Coordinator of the Secretariat Division",
+        "organization": "Technology Innovative Challenge (TIC)",
+        "location": "Jember, Indonesia",
+        "period": "Mar 2024 – May 2024",
+        "highlights": [
+          "Coordinated cross-functional teams and managed documentation, ensuring structured and efficient event operations."
+        ]
+      },
+      {
+        "id": "org-4",
+        "role": "Committee Leader",
+        "organization": "Komunitas Pengembangan Akademik",
+        "location": "Jember, Indonesia",
+        "period": "Dec 2023 – Present",
+        "highlights": [
+          "Lead a 50+ member community, designing programs that translate academic goals into actionable engagement strategies."
+        ]
+      },
+      {
+        "id": "org-5",
+        "role": "Staff Public Relations",
+        "organization": "Himpunan Mahasiswa Teknologi Informasi",
+        "location": "Jember, Indonesia",
+        "period": "Dec 2022 – Dec 2024",
+        "highlights": [
+          "Crafted and disseminated clear, audience-appropriate communications to the IT student community."
+        ]
+      }
+    ]
+  },
   "portfolio": [
     {
       "id": "1",
-      "src": "./img/websitepkm.png",
-      "title": "Website PKM-PI GK JEMBER",
-      "description": "Website PKM-PI Optimalisasi Digital Marketing berbasis Website Augmented Reality untuk Meningkatkan Kreativitas visualisasi Promosi Bagi Mitra UMKM Gerai Anyaman Plastik Desa Sidorejo ",
-      "link": "View In Website",
-      "url":"https://www.gkjember.com"
+      "src": "./img/trashtopia.png",
+      "title": "Trashtopia – Gamified Waste Management App",
+      "role": "UX Researcher & UX Writer",
+      "tools": "Figma, FigJam",
+      "badge": "3rd Place – Informatics Competition Festival 2024",
+      "year": "2024",
+      "description": "Investigated low public motivation in daily waste sorting through qualitative research and behavioral analysis, synthesizing findings into UX writing and gamified mechanics (Adventure & Arena).",
+      "link": "View Prototype",
+      "url": "https://www.figma.com/proto/IKagQxFPgeEuDgmO5TpZF5/TRASHTOPIA?node-id=1-3&t=es5Cyn0CtW0JgAM4-0&scaling=scale-down&page-id=1%3A3&starting-point-node-id=690%3A6468"
     },
     {
       "id": "2",
-      "src": "./img/booktopia.png",
-      "title": "Website Penjualan Buku Booktopia",
-      "description": "Project Mata Kuliah Pengembangan Berbasis Website. Dibuat dengan memanfaatkan Bootstrap, Javascript, dan Ajax untuk Front End. Dan PHP sebagai Backend",
-      "link": "View In Github",
-      "url":"https://github.com/khisanafif/booktopia"
+      "src": "./img/gesit.png",
+      "title": "GESIT – Smart City Application",
+      "role": "UX Researcher & UX Writer",
+      "tools": "Figma, FigJam",
+      "badge": "National Finalist – ISIC 2024",
+      "year": "2024",
+      "description": "Mapped urban community needs around public service accessibility (waste management & donor tracking) into user flows, microcopy, and information architecture.",
+      "link": "View Prototype",
+      "url": "https://www.figma.com/proto/R3kBGVvIrAOI8oCzfrdeh2/Smart-City---GESIT?node-id=1-11251&t=aR728I330iwLyERH-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=20%3A2557"
     },
     {
       "id": "3",
       "src": "./img/coulture.png",
-      "title": "UI / UX Design Project Coulture",
-      "description": "Pada Project ini saya lebih berfokus ke research untuk penulisan dan pengembangan proposal dalam perlombaan Nasional. Serta menjadi UX Writer agar mempermudah designer.",
+      "title": "Coulture – Culture & Travel Exploration App",
+      "role": "UX Researcher & UX Writer",
+      "tools": "Figma, FigJam, Trello",
+      "badge": "Design Project",
+      "year": "2024",
+      "description": "Examined post-pandemic tourist information-seeking behaviors through market research and synthesized findings into user journey maps and UX writing guidelines.",
       "link": "View Prototype",
-      "url":"https://www.figma.com/proto/ok0RNp3yxlTIEevLxtSGUK/ARA_CulToure?node-id=24-12443&t=h2BAqKrJNe9mBcb9-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=24%3A12443"
+      "url": "https://www.figma.com/proto/ok0RNp3yxlTIEevLxtSGUK/ARA_CulToure?node-id=24-12443&t=h2BAqKrJNe9mBcb9-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=24%3A12443"
     },
     {
       "id": "4",
-      "src": "./img/trashtopia.png",
-      "title": "UI / UX Design Project Trashtopia",
-      "description": "Pada Project ini saya lebih berfokus ke research untuk penulisan dan pengembangan proposal dalam Lomba Informatics Competition Festival 2024. Serta menjadi UX Writer agar mempermudah designer. Disini Kami Mendapatkan juara 3 untuk Bidang UI/UX.",
-      "link": "View Prototype",
-      "url":"https://www.figma.com/proto/IKagQxFPgeEuDgmO5TpZF5/TRASHTOPIA?node-id=1-3&t=es5Cyn0CtW0JgAM4-0&scaling=scale-down&page-id=1%3A3&starting-point-node-id=690%3A6468"
+      "src": "./img/placeholder-image.png",
+      "title": "Trans Jogja Smart Tourism Recommender",
+      "role": "UX-Integrated Full Stack Developer",
+      "tools": "CRISP-DM, React.js, Python, Figma",
+      "badge": "Final Research Project (Skripsi)",
+      "year": "2025 – Present",
+      "description": "Analyzed tourist navigation pain points in Yogyakarta's public transit network and applied CRISP-DM to build an intuitive, map-based route recommendation prototype.",
+      "link": "View GitHub",
+      "url": "https://github.com/khisanafif"
     },
     {
       "id": "5",
-      "src": "./img/gesit.png",
-      "title": "UI / UX Design Project GESIT",
-      "description": "Pengembangan Design untuk Diperlombakan dalam ISIC yang diadakan HIMASIF Fakultas Ilmu Komputer Universitas Jember. Dan berhasil menjadi Finalis dalam bidang Smart City.",
-      "link": "View Prototype",
-      "url":"https://www.figma.com/proto/R3kBGVvIrAOI8oCzfrdeh2/Smart-City---GESIT?node-id=1-11251&t=aR728I330iwLyERH-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=20%3A2557"
+      "src": "./img/booktopia.png",
+      "title": "Booktopia – E-Commerce & Literature Platform",
+      "role": "UX Logic Designer & Backend Developer",
+      "tools": "PHP, MySQL, Bootstrap, AJAX",
+      "badge": "Academic Project",
+      "year": "2023",
+      "description": "Analyzed transaction and catalog browsing flows to remove friction, integrating AJAX and user-informed backend architecture to earn the highest academic grade.",
+      "link": "View In Github",
+      "url": "https://github.com/khisanafif/booktopia"
     },
     {
       "id": "6",
-      "src": "./img/dispendukplus.png",
-      "title": "UI / UX Design Project DispendukPlus",
-      "description": "Design yang dikembangkan untuk mengikuti Gemastik Bidang UI/UX 2024 yang bertujuan untuk meningkatkan pelayanan publik",
-      "link": "View Prototype",
-      "url":"https://www.figma.com/proto/v384mukvI6Tp4bkJbDXOtZ/DispendukPlus?node-id=48-100&t=vDLwKlsuNhAQwguS-0&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=48%3A100"
+      "src": "./img/websitepkm.png",
+      "title": "Website PKM-PI GK JEMBER",
+      "role": "Web Developer & Digital Strategist",
+      "tools": "Web AR, Digital Marketing",
+      "badge": "PKM-PI Funded 2023",
+      "year": "2023",
+      "description": "Digital marketing optimization with Augmented Reality web visualization to elevate promotional creativity for MSME Gerai Anyaman Plastik Desa Sidorejo.",
+      "link": "View In Website",
+      "url": "https://www.gkjember.com"
     }
   ],
   "achievement": [
     {
-      "achievementName": "3rd Place Winner, National UI/UX Competition at 2024 Informatics Competition Festival, UPN Veteran Jawa Timur, January 12-30, 2024.",
+      "achievementName": "Finalist – Jember University Outstanding Student Award (Mahasiswa Berprestasi), Representing Faculty of Computer Science",
+      "year": 2025,
+      "certificateImage": "./img/pilmapres.jpg",
+      "author": "Universitas Jember"
+    },
+    {
+      "achievementName": "1st Place – Scientific Paper Competition, Information System Ideas Competition (ISIC)",
       "year": 2024,
-      "certificateImage": "./img/juara3.jpg",
-      "author": "Himpunan Mahasiswa Informatika UPN Veteran Jawa Timur"
+      "certificateImage": "./img/placeholder-image-1.png",
+      "author": "HIMASIF Fakultas Ilmu Komputer, Universitas Jember"
     },
     {
-      "achievementName": "Recipient, Program Kreativitas Mahasiswa Pengembangan IPTEK (PKM-PI) 2023",
-      "year": 2023,
-      "certificateImage": "./img/pendanaan.jpg",
-      "author": "Kementerian Riset, Teknologi, dan Pendidikan Tinggi"
-    },
-    {
-      "achievementName": " 1st Place winner of the Essay Competitition Technology Innovative Challenge (TIC) 7.0",
+      "achievementName": "1st Place – Essay Competition, Technology Innovative Challenge (TIC) 7.0",
       "year": 2024,
       "certificateImage": "./img/juaratic.png",
       "author": "Himpunan Mahasiswa Teknologi Informasi Universitas Jember"
     },
     {
-      "achievementName": " 2nd Place, Outstanding Student Award, Faculty of Computer Science, Jember Universit",
+      "achievementName": "3rd Place – National UI/UX Competition, Informatics Competition Festival",
       "year": 2024,
-      "certificateImage": "./img/pilmapres.jpg",
-      "author": "Badan Eksekutif Mahasiswa Fakultas Ilmu Komputer Universitas Jember"
+      "certificateImage": "./img/juara3.jpg",
+      "author": "Himpunan Mahasiswa Informatika UPN \"Veteran\" Jawa Timur"
+    },
+    {
+      "achievementName": "Recipient – Program Kreativitas Mahasiswa Pengembangan IPTEK (PKM-PI)",
+      "year": 2023,
+      "certificateImage": "./img/pendanaan.jpg",
+      "author": "Kementerian Riset, Teknologi, dan Pendidikan Tinggi"
     }
   ]
 }
