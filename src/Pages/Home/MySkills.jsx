@@ -1,4 +1,5 @@
 import data from "../../data/index.json";
+import Tilt3D from "../../components/Tilt3D";
 
 export default function MySkills() {
   return (
@@ -9,15 +10,20 @@ export default function MySkills() {
       </div>
       <div className="skills--section--container">
         {data?.skills?.map((item, index) => (
-          <div key={item.id || index} className="skills--section--card">
-            <div className="skills--section--img">
+          <Tilt3D
+            key={item.id || index}
+            className="skills--section--card"
+            maxTilt={8}
+            scale={1.03}
+          >
+            <div className="skills--section--img layer-3d-pop">
               <img src={item.src} alt={item.title} />
             </div>
-            <div className="skills--section--card--content">
+            <div className="skills--section--card--content layer-3d-mid">
               <h3 className="skills--section--title">{item.title}</h3>
               <p className="skills--section--description">{item.description}</p>
             </div>
-          </div>
+          </Tilt3D>
         ))}
       </div>
     </section>

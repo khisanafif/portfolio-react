@@ -1,4 +1,5 @@
 import data from "../../data/index.json";
+import Tilt3D from "../../components/Tilt3D";
 
 export default function MyPortfolio() {
   return (
@@ -13,7 +14,7 @@ export default function MyPortfolio() {
             href="https://github.com/khisanafif"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn btn-github"
+            className="btn btn-github btn-3d"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -35,11 +36,16 @@ export default function MyPortfolio() {
       </div>
       <div className="portfolio--section--container">
         {data?.portfolio?.map((item, index) => (
-          <article key={item.id || index} className="portfolio--section--card">
+          <Tilt3D
+            key={item.id || index}
+            className="portfolio--section--card"
+            maxTilt={7}
+            scale={1.02}
+          >
             <div className="portfolio--section--img">
               <img src={item.src} alt={item.title} loading="lazy" />
             </div>
-            <div className="portfolio--section--card--content">
+            <div className="portfolio--section--card--content layer-3d-mid">
               <div className="portfolio--section--card--body">
                 <h3 className="portfolio--section--title">{item.title}</h3>
                 <p className="text-md portfolio--section--description">
@@ -70,7 +76,7 @@ export default function MyPortfolio() {
                 </svg>
               </a>
             </div>
-          </article>
+          </Tilt3D>
         ))}
       </div>
     </section>
