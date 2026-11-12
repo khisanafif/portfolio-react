@@ -217,42 +217,82 @@ h3 {
 }
 
 /* Navbar Style Start */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 14px var(--section-px);
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 4px 24px rgba(16, 24, 40, 0.07);
+.navbar-wrapper {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+  padding: 0;
+  transition: padding 0.3s ease;
+}
+
+.navbar-wrapper.is-scrolled {
+  padding: 12px clamp(12px, 3vw, 40px) 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px var(--section-px);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(94, 59, 238, 0.08);
+  box-shadow: 0 4px 24px rgba(16, 24, 40, 0.05);
   min-height: 76px;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.navbar--scrolled {
+  padding: 10px clamp(18px, 3vw, 32px);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(94, 59, 238, 0.14);
+  box-shadow: 0 16px 40px rgba(28, 30, 83, 0.12);
 }
 
 .navbar--logo {
-  display: flex;
+  display: inline-flex;
   align-items: center;
+  gap: 10px;
   cursor: pointer;
   flex-shrink: 0;
+  text-decoration: none;
 }
 
 .navbar--logo img {
-  height: 48px;
+  height: 44px;
   width: auto;
+  transition: transform 0.25s ease;
+}
+
+.navbar--logo:hover img {
+  transform: scale(1.06) rotate(-3deg);
+}
+
+.navbar--brand {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--heading-color);
+}
+
+.navbar--brand-dot {
+  color: var(--primary);
 }
 
 .navbar--items > ul {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: clamp(20px, 2.5vw, 40px);
+  gap: 6px;
   margin: 0;
-  padding: 0;
+  padding: 6px;
+  border-radius: 999px;
+  background: rgba(94, 59, 238, 0.05);
+  border: 1px solid rgba(94, 59, 238, 0.08);
 }
 
 .navbar--items ul > li > a {
@@ -260,17 +300,33 @@ h3 {
 }
 
 .navbar--content {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 999px;
   color: var(--darkblue);
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 20px;
   cursor: pointer;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, background-color 0.2s ease,
+    box-shadow 0.2s ease, transform 0.2s ease;
 }
 
-.navbar--content:hover,
-.navbar--active-content {
+.navbar--content:hover {
   color: var(--primary);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar--active-content {
+  color: var(--white) !important;
+  background: linear-gradient(135deg, var(--primary), #7b5cff);
+  box-shadow: 0 6px 16px rgba(94, 59, 238, 0.28);
+}
+
+.navbar--cta {
+  padding: 10px 22px;
+  font-size: 15px;
+  border-radius: 999px;
 }
 
 .navbar--mobile-cta {
@@ -1179,22 +1235,26 @@ input[type="checkbox"] {
 
   .navbar--items {
     position: fixed;
-    top: 76px;
-    left: 0;
-    right: 0;
-    background-color: var(--white);
-    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
-    border-top: 1px solid var(--border-subtle);
-    padding: 24px var(--section-px) 32px;
-    transform: translateY(-120%);
+    top: 86px;
+    left: 16px;
+    right: 16px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 20px 44px rgba(28, 30, 83, 0.16);
+    border: 1px solid rgba(94, 59, 238, 0.14);
+    padding: 20px 18px 24px;
+    transform: translateY(-20px) scale(0.98);
     opacity: 0;
     pointer-events: none;
-    transition: transform 0.3s ease, opacity 0.25s ease;
+    transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.24s ease;
     z-index: 999;
   }
 
   .navbar--items.active {
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
     opacity: 1;
     pointer-events: auto;
   }
@@ -1202,8 +1262,12 @@ input[type="checkbox"] {
   .navbar--items > ul {
     flex-direction: column;
     align-items: center;
-    gap: 18px;
+    gap: 8px;
     width: 100%;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
   }
 
   .navbar--items ul li {
@@ -1213,7 +1277,7 @@ input[type="checkbox"] {
 
   .navbar--items ul li a {
     display: inline-block;
-    padding: 6px 12px;
+    padding: 10px 24px;
   }
 
   .navbar--mobile-cta {
