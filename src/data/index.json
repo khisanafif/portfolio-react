@@ -3,153 +3,130 @@
     {
       "id": "1",
       "src": "./img/feather-pen-1.png",
-      "title": "UX Research & Writing",
-      "description": "Translating qualitative and quantitative user insights into intuitive information architecture and clear product copy.",
+      "title": "UX Research & Data Analysis",
+      "description": "Combining qualitative user research with quantitative data analysis (CRISP-DM, Python, SQL) to uncover behavioral patterns and turn raw data into actionable product decisions.",
       "tags": [
         "User Research",
+        "Data Analysis",
+        "CRISP-DM",
         "Usability Testing",
-        "Information Architecture",
-        "UX Writing",
-        "Microcopy",
+        "Python",
+        "SQL",
         "User Journey Mapping",
-        "Wireframing",
-        "Prototyping",
         "Competitive Analysis"
       ]
     },
     {
       "id": "2",
-      "src": "./img/product-chain-1.png",
-      "title": "Design & Workflow Tools",
-      "description": "Collaborating across design, research synthesis, and project management workflows from ideation to handoff.",
-      "tags": ["Figma", "FigJam", "Trello", "Notion"]
+      "src": "./img/feather-pen-2.png",
+      "title": "UX Writing & Architecture",
+      "description": "Structuring clear information architecture and crafting empathetic microcopy so users navigate complex systems effortlessly without friction.",
+      "tags": [
+        "UX Writing",
+        "Microcopy",
+        "Information Architecture",
+        "Wireframing",
+        "Prototyping"
+      ]
     },
     {
       "id": "3",
-      "src": "./img/tag-1.png",
-      "title": "Technical Stack",
-      "description": "Bridging UX decisions with technical implementation across web front-end, back-end, and data-driven systems.",
-      "tags": ["HTML", "CSS", "JavaScript", "React.js", "Python", "SQL", "PHP"]
+      "src": "./img/product-chain-1.png",
+      "title": "Design & Workflow Tools",
+      "description": "Collaborating seamlessly from research synthesis and ideation to high-fidelity prototypes and structured team delivery.",
+      "tags": ["Figma", "FigJam", "Trello", "Notion", "Git & GitHub"]
     },
     {
       "id": "4",
-      "src": "./img/feather-pen-2.png",
-      "title": "Soft Skills",
-      "description": "Leading cross-functional teams, presenting research persuasively, and communicating with empathy.",
+      "src": "./img/tag-1.png",
+      "title": "Full-Stack, AI & Soft Skills",
+      "description": "Translating UX and analytical insights into interactive web, 3D, and AI applications while leading cross-functional teams.",
       "tags": [
-        "Empathetic Communication",
+        "React",
+        "TypeScript",
+        "FastAPI",
+        "Three.js / WebGL2",
+        "Node.js",
         "Leadership",
-        "Storytelling",
-        "Critical & Creative Thinking",
-        "Team Collaboration",
-        "Adaptive"
+        "Storytelling"
       ]
     }
   ],
-  "experience": {
-    "ux": [
-      {
-        "id": "ux-1",
-        "role": "Laboratory Coordinator",
-        "organization": "Artificial Intelligence Laboratory, Faculty of Computer Science UNEJ",
-        "location": "Jember, Indonesia",
-        "period": "Aug 2024 – Present",
-        "highlights": [
-          "Oversee research initiatives and academic practicums, applying structured research methodologies to laboratory projects.",
-          "Lead a team of assistants, coordinating research workflows and knowledge-sharing sessions."
-        ]
-      },
-      {
-        "id": "ux-2",
-        "role": "Assistant Laboratory",
-        "organization": "Software Engineering Laboratory",
-        "location": "Jember, Indonesia",
-        "period": "Aug 2023 – Dec 2023",
-        "highlights": [
-          "Facilitated learning sessions for 50 students, developing clear instructional frameworks to improve knowledge transfer and comprehension.",
-          "Applied user-centered communication strategies to adapt technical content to varied learning needs."
-        ]
-      },
-      {
-        "id": "ux-3",
-        "role": "Presenter",
-        "organization": "International Conference on Technical and Vocational Education and Training (ICTVET)",
-        "location": "Padang, Indonesia",
-        "period": "Aug 2023",
-        "highlights": [
-          "Presented research findings on technology and vocational education advancements to an audience of 200+ attendees.",
-          "Developed a structured narrative to communicate complex research insights clearly and persuasively."
-        ]
-      }
-    ],
-    "organization": [
-      {
-        "id": "org-1",
-        "role": "HRD Coordinator",
-        "organization": "Ambulu Mengajar",
-        "location": "Jember, Indonesia",
-        "period": "Jan 2025 – Present",
-        "highlights": [
-          "Lead the HRD division, designing people-centered programs to develop member capabilities and community impact."
-        ]
-      },
-      {
-        "id": "org-2",
-        "role": "Staff Human Resource and Development",
-        "organization": "Ambulu Mengajar",
-        "location": "Jember, Indonesia",
-        "period": "Jan 2024 – Dec 2024",
-        "highlights": [
-          "Identified community needs and developed targeted educational programs to bridge the gap between students and higher education access."
-        ]
-      },
-      {
-        "id": "org-3",
-        "role": "Coordinator of the Secretariat Division",
-        "organization": "Technology Innovative Challenge (TIC)",
-        "location": "Jember, Indonesia",
-        "period": "Mar 2024 – May 2024",
-        "highlights": [
-          "Coordinated cross-functional teams and managed documentation, ensuring structured and efficient event operations."
-        ]
-      },
-      {
-        "id": "org-4",
-        "role": "Committee Leader",
-        "organization": "Komunitas Pengembangan Akademik",
-        "location": "Jember, Indonesia",
-        "period": "Dec 2023 – Present",
-        "highlights": [
-          "Lead a 50+ member community, designing programs that translate academic goals into actionable engagement strategies."
-        ]
-      },
-      {
-        "id": "org-5",
-        "role": "Staff Public Relations",
-        "organization": "Himpunan Mahasiswa Teknologi Informasi",
-        "location": "Jember, Indonesia",
-        "period": "Dec 2022 – Dec 2024",
-        "highlights": [
-          "Crafted and disseminated clear, audience-appropriate communications to the IT student community."
-        ]
-      }
-    ]
-  },
   "portfolio": [
     {
       "id": "1",
+      "src": "./img/swave.png",
+      "title": "SWAVE Video – Web-Native & Self-Hosted Visual Editor",
+      "role": "Creator & WebGL2 Engineer",
+      "tools": "TypeScript, React, WebGL2, Transformers.js, MP4-Muxer",
+      "badge": "Open-Source • Live Web App",
+      "year": "2026",
+      "description": "60 FPS WebGL2 visual and video editor with on-device Whisper AI auto-subtitles, VAD silence removal, Chroma Key, and watermark-free 4K MP4 export.",
+      "link": "Launch Web App",
+      "url": "https://khisanafif.github.io/Swave-Video-Editor-VIdeo-Free/"
+    },
+    {
+      "id": "2",
+      "src": "./img/novelpro.png",
+      "title": "The Zen Literary Studio (NovelPro)",
+      "role": "AI Systems & Full-Stack Dev",
+      "tools": "Python, FastAPI, llama.cpp (GGUF), LLM APIs, EbookLib",
+      "badge": "AI Writing Studio",
+      "year": "2026",
+      "description": "Cross-platform AI long-form novel writing studio with story-bible continuity, offline local GGUF inference, external AI APIs, and EPUB export.",
+      "link": "View GitHub",
+      "url": "https://github.com/khisanafif/novelpro"
+    },
+    {
+      "id": "3",
+      "src": "./img/nusantara-chef.png",
+      "title": "Nusantara Chef – Cozy 3D Indonesian Cooking Game",
+      "role": "3D Interactive & Audio Dev",
+      "tools": "TypeScript, React 19, Three.js, Web Audio API, Tailwind CSS v4",
+      "badge": "3D Web Game",
+      "year": "2026",
+      "description": "Cozy 3D Indonesian culinary simulation with tactile cooking stations, procedural ASMR audio synthesis, retro cassette radio, and tropical seasons.",
+      "link": "View GitHub",
+      "url": "https://github.com/khisanafif/nusantara-chef"
+    },
+    {
+      "id": "4",
+      "src": "./img/transjogja.png",
+      "title": "Trans Jogja Smart Tourism Recommender",
+      "role": "Data Analyst & Full-Stack Dev",
+      "tools": "CRISP-DM, Python, FastAPI, React, Leaflet",
+      "badge": "Final Research (Skripsi)",
+      "year": "2025 – 2026",
+      "description": "Analyzed tourist navigation pain points across 534 stops and 20 corridors using CRISP-DM modeling to build an interactive route recommender.",
+      "link": "Skripsi Repo",
+      "url": "https://github.com/khisanafif/transjogja_skripsi"
+    },
+    {
+      "id": "5",
+      "src": "./img/ambulu-mengajar.png",
+      "title": "Ambulu Mengajar Organization Platform (WEB-AM)",
+      "role": "Full-Stack Web Developer",
+      "tools": "React 18, Vite, Node.js, REST API, JWT Auth",
+      "badge": "Full-Stack Non-Profit",
+      "year": "2026",
+      "description": "Official web platform and decoupled REST API backend for the Ambulu Mengajar educational & social non-profit in Jember.",
+      "link": "View GitHub",
+      "url": "https://github.com/khisanafif/WEB-AM"
+    },
+    {
+      "id": "6",
       "src": "./img/trashtopia.png",
       "title": "Trashtopia – Gamified Waste Management App",
       "role": "UX Researcher & UX Writer",
       "tools": "Figma, FigJam",
       "badge": "3rd Place – Informatics Competition Festival 2024",
       "year": "2024",
-      "description": "Investigated low public motivation in daily waste sorting through qualitative research and behavioral analysis, synthesizing findings into UX writing and gamified mechanics (Adventure & Arena).",
+      "description": "Investigated low public motivation in daily waste sorting through qualitative research and behavioral analysis, synthesizing findings into UX writing and gamified mechanics.",
       "link": "View Prototype",
       "url": "https://www.figma.com/proto/IKagQxFPgeEuDgmO5TpZF5/TRASHTOPIA?node-id=1-3&t=es5Cyn0CtW0JgAM4-0&scaling=scale-down&page-id=1%3A3&starting-point-node-id=690%3A6468"
     },
     {
-      "id": "2",
+      "id": "7",
       "src": "./img/gesit.png",
       "title": "GESIT – Smart City Application",
       "role": "UX Researcher & UX Writer",
@@ -161,7 +138,7 @@
       "url": "https://www.figma.com/proto/R3kBGVvIrAOI8oCzfrdeh2/Smart-City---GESIT?node-id=1-11251&t=aR728I330iwLyERH-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=20%3A2557"
     },
     {
-      "id": "3",
+      "id": "8",
       "src": "./img/coulture.png",
       "title": "Coulture – Culture & Travel Exploration App",
       "role": "UX Researcher & UX Writer",
@@ -173,19 +150,7 @@
       "url": "https://www.figma.com/proto/ok0RNp3yxlTIEevLxtSGUK/ARA_CulToure?node-id=24-12443&t=h2BAqKrJNe9mBcb9-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=24%3A12443"
     },
     {
-      "id": "4",
-      "src": "./img/placeholder-image.png",
-      "title": "Trans Jogja Smart Tourism Recommender",
-      "role": "UX-Integrated Full Stack Developer",
-      "tools": "CRISP-DM, React.js, Python, Figma",
-      "badge": "Final Research Project (Skripsi)",
-      "year": "2025 – Present",
-      "description": "Analyzed tourist navigation pain points in Yogyakarta's public transit network and applied CRISP-DM to build an intuitive, map-based route recommendation prototype.",
-      "link": "View GitHub",
-      "url": "https://github.com/khisanafif"
-    },
-    {
-      "id": "5",
+      "id": "9",
       "src": "./img/booktopia.png",
       "title": "Booktopia – E-Commerce & Literature Platform",
       "role": "UX Logic Designer & Backend Developer",
@@ -193,11 +158,11 @@
       "badge": "Academic Project",
       "year": "2023",
       "description": "Analyzed transaction and catalog browsing flows to remove friction, integrating AJAX and user-informed backend architecture to earn the highest academic grade.",
-      "link": "View In Github",
+      "link": "View GitHub",
       "url": "https://github.com/khisanafif/booktopia"
     },
     {
-      "id": "6",
+      "id": "10",
       "src": "./img/websitepkm.png",
       "title": "Website PKM-PI GK JEMBER",
       "role": "Web Developer & Digital Strategist",
@@ -205,7 +170,7 @@
       "badge": "PKM-PI Funded 2023",
       "year": "2023",
       "description": "Digital marketing optimization with Augmented Reality web visualization to elevate promotional creativity for MSME Gerai Anyaman Plastik Desa Sidorejo.",
-      "link": "View In Website",
+      "link": "Visit Website",
       "url": "https://khisanafif.github.io"
     }
   ],
@@ -219,7 +184,7 @@
     {
       "achievementName": "1st Place – Scientific Paper Competition, Information System Ideas Competition (ISIC)",
       "year": 2024,
-      "certificateImage": "./img/placeholder-image-1.png",
+      "certificateImage": "./img/isic2024.png",
       "author": "HIMASIF Fakultas Ilmu Komputer, Universitas Jember"
     },
     {

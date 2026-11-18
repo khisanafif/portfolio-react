@@ -1,10 +1,58 @@
+import { useState } from "react";
 import Tilt3D from "../../components/Tilt3D";
 import { useApp } from "../../context/AppContext";
 import { translations } from "../../data/translations";
 
+function GitHubIcon({ size = 20 }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M12 0.297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+    </svg>
+  );
+}
+
+function ArrowUpRightIcon() {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="15"
+      height="15"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M7 17 17 7M7 7h10v10" />
+    </svg>
+  );
+}
+
 export default function MyPortfolio() {
   const { lang } = useApp();
   const t = translations[lang].portfolio;
+  const [activeFilter, setActiveFilter] = useState("all");
+
+  const filteredItems =
+    activeFilter === "all"
+      ? t.items
+      : t.items.filter((item) => item.category === activeFilter);
+
+  const getCount = (key) =>
+    key === "all"
+      ? t.items.length
+      : t.items.filter((item) => item.category === key).length;
+
+  const isTwoColGrid = filteredItems.length === 4;
 
   return (
     <section className="portfolio--section" id="MyPortfolio">
@@ -13,85 +61,122 @@ export default function MyPortfolio() {
           <p className="sub--title">{t.subTitle}</p>
           <h2 className="sections--heading">{t.heading}</h2>
         </div>
-        <div>
+        <div className="portfolio--header-actions">
+          <div
+            className="portfolio--filters"
+            role="tablist"
+            aria-label="Project categories"
+          >
+            {t.filters.map((filter) => (
+              <button
+                key={filter.key}
+                type="button"
+                role="tab"
+                aria-selected={activeFilter === filter.key}
+                className={`portfolio--filter-btn ${
+                  activeFilter === filter.key ? "active" : ""
+                }`}
+                onClick={() => setActiveFilter(filter.key)}
+              >
+                <span>{filter.label}</span>
+                <span className="portfolio--filter-count">
+                  {getCount(filter.key)}
+                </span>
+              </button>
+            ))}
+          </div>
           <a
             href="https://github.com/khisanafif"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-github btn-3d"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 33 33"
-              fill="none"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M16.3333 0.166748C7.50028 0.166748 0.333252 7.33378 0.333252 16.1667C0.333252 24.9997 7.50028 32.1667 16.3333 32.1667C25.1489 32.1667 32.3333 24.9997 32.3333 16.1667C32.3333 7.33378 25.1489 0.166748 16.3333 0.166748ZM26.9016 7.54202C28.8105 9.8674 29.9559 12.8348 29.9906 16.0452C29.5394 15.9585 25.0274 15.0387 20.4808 15.6114C20.3767 15.3858 20.2899 15.1428 20.1858 14.8999C19.9081 14.2405 19.5958 13.5637 19.2834 12.9216C24.3159 10.8739 26.6066 7.9238 26.9016 7.54202ZM16.3333 2.52684C19.804 2.52684 22.9797 3.82836 25.3919 5.96285C25.1489 6.30992 23.0838 9.06914 18.2248 10.8912C15.9862 6.77846 13.5047 3.41187 13.1229 2.89126C14.1467 2.64831 15.2227 2.52684 16.3333 2.52684ZM10.5199 3.811C10.8843 4.2969 13.3138 7.68085 15.5871 11.7068C9.20093 13.4075 3.56102 13.3728 2.95364 13.3728C3.83867 9.13855 6.70201 5.61577 10.5199 3.811ZM2.65863 16.1841C2.65863 16.0452 2.65863 15.9064 2.65863 15.7676C3.24865 15.7849 9.87772 15.8717 16.6977 13.824C17.0969 14.5875 17.4613 15.3684 17.8084 16.1493C17.6348 16.2014 17.4439 16.2535 17.2704 16.3055C10.2248 18.5788 6.47642 24.7914 6.16405 25.312C3.99485 22.8999 2.65863 19.6895 2.65863 16.1841ZM16.3333 29.8413C13.1749 29.8413 10.2595 28.7654 7.95147 26.9606C8.19442 26.4574 10.971 21.1125 18.676 18.4227C18.7107 18.4053 18.7281 18.4053 18.7628 18.388C20.689 23.3684 21.47 27.5506 21.6782 28.748C20.0296 29.4595 18.2248 29.8413 16.3333 29.8413ZM23.9515 27.4986C23.8127 26.6656 23.0838 22.6743 21.2964 17.7632C25.5828 17.0864 29.3311 18.1971 29.7997 18.3533C29.2097 22.1537 27.0231 25.4335 23.9515 27.4986Z"
-                fill="currentColor"
-              />
-            </svg>
+            <GitHubIcon size={20} />
             {t.githubBtn}
           </a>
         </div>
       </div>
-      <div className="portfolio--section--container">
-        {t.items.map((item, index) => (
-          <Tilt3D
-            key={item.id || index}
-            className="portfolio--section--card"
-            maxTilt={7}
-            scale={1.02}
-          >
-            <div className="portfolio--section--img">
-              <img src={item.src} alt={item.title} loading="lazy" />
-              {item.badge && (
-                <span className="portfolio--badge">{item.badge}</span>
-              )}
-            </div>
-            <div className="portfolio--section--card--content layer-3d-mid">
-              <div className="portfolio--section--card--body">
-                <div className="portfolio--meta">
-                  <span className="portfolio--role">{item.role}</span>
-                  <span className="portfolio--year">{item.year}</span>
-                </div>
-                <h3 className="portfolio--section--title">{item.title}</h3>
-                <p className="text-md portfolio--section--description">
-                  {item.description}
-                </p>
-                {item.tools && (
-                  <p className="portfolio--tools">Tools: {item.tools}</p>
-                )}
+
+      <div
+        className={`portfolio--section--container ${
+          isTwoColGrid ? "portfolio--grid--two" : ""
+        }`}
+      >
+        {filteredItems.map((item, index) => {
+          const isFeaturedSpotlight = activeFilter === "all" && index === 0;
+          return (
+            <Tilt3D
+              key={item.id || index}
+              className={`portfolio--section--card ${
+                isFeaturedSpotlight ? "portfolio--card--featured" : ""
+              }`}
+              maxTilt={isFeaturedSpotlight ? 3 : 6}
+              scale={isFeaturedSpotlight ? 1.01 : 1.02}
+            >
+              <div className="portfolio--section--img">
+                <img src={item.src} alt={item.title} />
               </div>
-              <a
-                href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm portfolio--link"
-              >
-                {item.link}
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="16"
-                  viewBox="0 0 20 19"
-                  fill="none"
-                >
-                  <path
-                    d="M4.66667 1.66675H18V15.0001M18 1.66675L2 17.6667L18 1.66675Z"
-                    stroke="currentColor"
-                    strokeWidth="2.66667"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </a>
-            </div>
-          </Tilt3D>
-        ))}
+              <div className="portfolio--section--card--content layer-3d-mid">
+                <div className="portfolio--section--card--body">
+                  <div className="portfolio--badge-row">
+                    {isFeaturedSpotlight && (
+                      <span className="portfolio--featured-tag">
+                        ★ {t.featuredLabel}
+                      </span>
+                    )}
+                    {item.badge && (
+                      <span className="portfolio--badge">{item.badge}</span>
+                    )}
+                    <span className="portfolio--year">{item.year}</span>
+                  </div>
+                  <div className="portfolio--meta">
+                    <span className="portfolio--role">{item.role}</span>
+                  </div>
+                  <h3 className="portfolio--section--title">{item.title}</h3>
+                  <p className="text-md portfolio--section--description">
+                    {item.description}
+                  </p>
+                  {Array.isArray(item.tools) && item.tools.length > 0 && (
+                    <div className="portfolio--tools-list">
+                      {item.tools.map((tool, tIdx) => (
+                        <span key={tIdx} className="portfolio--tool-tag">
+                          {tool}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                <div className="portfolio--card-links">
+                  <a
+                    href={item.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm portfolio--link"
+                  >
+                    {item.linkType === "github" && <GitHubIcon size={15} />}
+                    <span>{item.link}</span>
+                    <ArrowUpRightIcon />
+                  </a>
+                  {item.secondaryUrl && item.secondaryLink && (
+                    <a
+                      href={item.secondaryUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm portfolio--link portfolio--link-secondary"
+                    >
+                      {item.secondaryType === "github" && (
+                        <GitHubIcon size={15} />
+                      )}
+                      <span>{item.secondaryLink}</span>
+                      <ArrowUpRightIcon />
+                    </a>
+                  )}
+                </div>
+              </div>
+            </Tilt3D>
+          );
+        })}
       </div>
     </section>
   );

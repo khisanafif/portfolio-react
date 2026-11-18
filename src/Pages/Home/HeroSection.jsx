@@ -67,11 +67,23 @@ export default function HeroSection() {
             className="hero--3d-image"
           />
           <div className="hero--floating-chip hero--chip-top">
-            <span className="chip-icon">📊</span>
+            <span className="chip-icon-wrap" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M3 3v18h18" />
+                <path d="M18 17V9" />
+                <path d="M13 17V5" />
+                <path d="M8 17v-3" />
+              </svg>
+            </span>
             <span>{t.chipTop}</span>
           </div>
           <div className="hero--floating-chip hero--chip-bottom">
-            <span className="chip-icon">🏆</span>
+            <span className="chip-icon-wrap chip-icon-gold" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M8 21h8M12 17v4M6 4h12v5a6 6 0 0 1-12 0V4Z" />
+                <path d="M6 6H4a1 1 0 0 0-1 1v1a3 3 0 0 0 3 3M18 6h2a1 1 0 0 1 1 1v1a3 3 0 0 1-3 3" />
+              </svg>
+            </span>
             <span>{t.chipBottom}</span>
           </div>
         </Tilt3D>

@@ -1,7 +1,44 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-scroll";
 import { useApp } from "../../context/AppContext";
 import { translations } from "../../data/translations";
+
+function SunIcon() {
+  return (
+    <svg
+      width="17"
+      height="17"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <circle cx="12" cy="12" r="4" />
+      <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+    </svg>
+  );
+}
+
+function MoonIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+    </svg>
+  );
+}
 
 function Navbar() {
   const [navActive, setNavActive] = useState(false);
@@ -9,6 +46,7 @@ function Navbar() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const { theme, toggleTheme, lang, setLang } = useApp();
   const t = translations[lang].nav;
+  const navRef = useRef(null);
 
   const toggleNav = () => {
     setNavActive((prev) => !prev);
@@ -34,27 +72,54 @@ function Navbar() {
       setScrollProgress(Math.min(100, Math.max(0, progress)));
     };
 
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        closeMenu();
+      }
+    };
+
+    const handleClickOutside = (e) => {
+      if (navRef.current && !navRef.current.contains(e.target)) {
+        closeMenu();
+      }
+    };
+
     window.addEventListener("resize", handleResize);
     window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("keydown", handleKeyDown);
+    document.addEventListener("mousedown", handleClickOutside);
     handleScroll();
 
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("keydown", handleKeyDown);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 
+  const navItems = [
+    { to: "heroSection", label: t.home },
+    { to: "mySkills", label: t.skills },
+    { to: "AboutMe", label: t.about },
+    { to: "Experience", label: t.experience },
+    { to: "MyPortfolio", label: t.projects },
+    { to: "achievement", label: t.awards },
+  ];
+
   return (
-    <header className={`navbar-wrapper ${scrolled ? "is-scrolled" : ""}`}>
+    <header
+      ref={navRef}
+      className={`navbar-wrapper ${scrolled ? "is-scrolled" : ""}`}
+    >
       <div
         className="scroll-progress-bar"
         style={{ width: `${scrollProgress}%` }}
         aria-hidden="true"
       />
       <nav
-        className={`navbar ${navActive ? "active" : ""} ${
-          scrolled ? "navbar--scrolled" : ""
-        }`}
+        className={`navbar ${navActive ? "active" : ""} ${scrolled ? "navbar--scrolled" : ""
+          }`}
         aria-label="Main navigation"
       >
         <Link
@@ -98,7 +163,7 @@ function Navbar() {
             aria-label="Toggle dark or light mode"
             title={theme === "light" ? "Dark Mode" : "Light Mode"}
           >
-            {theme === "light" ? "🌙" : "☀️"}
+            {theme === "light" ? <MoonIcon /> : <SunIcon />}
           </button>
           <button
             type="button"
@@ -115,90 +180,22 @@ function Navbar() {
 
         <div className={`navbar--items ${navActive ? "active" : ""}`}>
           <ul>
-            <li>
-              <Link
-                onClick={closeMenu}
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-80}
-                duration={500}
-                to="heroSection"
-                className="navbar--content"
-              >
-                {t.home}
-              </Link>
-            </li>
-            <li>
-              <Link
-                onClick={closeMenu}
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-80}
-                duration={500}
-                to="mySkills"
-                className="navbar--content"
-              >
-                {t.skills}
-              </Link>
-            </li>
-            <li>
-              <Link
-                onClick={closeMenu}
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-80}
-                duration={500}
-                to="AboutMe"
-                className="navbar--content"
-              >
-                {t.about}
-              </Link>
-            </li>
-            <li>
-              <Link
-                onClick={closeMenu}
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-80}
-                duration={500}
-                to="Experience"
-                className="navbar--content"
-              >
-                {t.experience}
-              </Link>
-            </li>
-            <li>
-              <Link
-                onClick={closeMenu}
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-80}
-                duration={500}
-                to="MyPortfolio"
-                className="navbar--content"
-              >
-                {t.projects}
-              </Link>
-            </li>
-            <li>
-              <Link
-                onClick={closeMenu}
-                activeClass="navbar--active-content"
-                spy={true}
-                smooth={true}
-                offset={-80}
-                duration={500}
-                to="achievement"
-                className="navbar--content"
-              >
-                {t.awards}
-              </Link>
-            </li>
+            {navItems.map((item) => (
+              <li key={item.to}>
+                <Link
+                  onClick={closeMenu}
+                  activeClass="navbar--active-content"
+                  spy={true}
+                  smooth={true}
+                  offset={-80}
+                  duration={500}
+                  to={item.to}
+                  className="navbar--content"
+                >
+                  {item.label}
+                </Link>
+              </li>
+            ))}
             <li className="navbar--mobile-cta">
               <Link
                 onClick={closeMenu}
@@ -241,7 +238,7 @@ function Navbar() {
             aria-label="Toggle dark or light mode"
             title={theme === "light" ? "Dark Mode" : "Light Mode"}
           >
-            {theme === "light" ? "🌙" : "☀️"}
+            {theme === "light" ? <MoonIcon /> : <SunIcon />}
           </button>
           <Link
             onClick={closeMenu}
