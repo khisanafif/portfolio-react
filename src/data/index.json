@@ -34,7 +34,13 @@
       "src": "./img/product-chain-1.png",
       "title": "Design & Workflow Tools",
       "description": "Collaborating seamlessly from research synthesis and ideation to high-fidelity prototypes and structured team delivery.",
-      "tags": ["Figma", "FigJam", "Trello", "Notion", "Git & GitHub"]
+      "tags": [
+        "Figma",
+        "FigJam",
+        "Trello",
+        "Notion",
+        "Git & GitHub"
+      ]
     },
     {
       "id": "4",
